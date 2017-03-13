@@ -1,0 +1,16 @@
+script#tplSavedSearches(type="text/template")
+    .filters-filter
+        h3.filters__title Búsquedas guardadas
+        .filters-items
+            <% if(list.length != 0) { %>
+            <% _.each(list, function(item) { %>
+            .filters-item
+                a.filters-item__search-link(href!="<%= item.url %>") <%= item.label %>
+                .filters-item-options
+                    a.filters-item-options__link.js-edit-saved-search(href="javascript:;") Editar
+                    |  | 
+                    a.filters-item-options__link.js-delete-saved-search(href="javascript:;") Eliminar
+            <% }) %>
+            <% } else { %>
+            .filters-item No tienes búsquedas guardadas
+            <% } %>
