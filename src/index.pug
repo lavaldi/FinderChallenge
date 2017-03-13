@@ -9,16 +9,19 @@ html(lang="es")
         link(href="/styles/index.css", rel="stylesheet")
 
     body
-        .app.pure-g
-            header.pure-u-1
-                .pure-u-1-3
-                    h1.logo Finder challenge!
-                .pure-u-7-24
+        .app
+            header.pure-g.header
+                h1.pure-u-1-3.header__logo Finder challenge
+                .pure-u-2-3.header__search-form
                     include blocks/search-form
-                .pure-u-1-3
-            aside.filters.pure-u-1-4
-            content.pure-u-3-4
-            footer.pure-u-1
+            .pure-g.container
+                aside.pure-u-1-4.container__filters
+                    include blocks/filters
+                content.pure-u-3-4.container__movies
+                    include blocks/content
+                    include blocks/pagination
+            footer.pure-g.footer
+                //-.pure-u-1
 
         //- third party libraries
         script(src="/vendor/underscore/underscore-min.js")
